@@ -1,0 +1,78 @@
+<html>
+  <script src="//code.jquery.com/jquery-3.1.1.js"></script>
+  <script src="tree.js"></script>
+  <style>
+    .dc-tree {
+      position: relative;
+      text-align: center;
+      background-color: #f2f2f2;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .dc-tree * {
+      box-sizing: border-box;
+    }
+
+    .dctree-card {
+      text-align: center;
+      padding: 20px;
+      position: absolute;
+      margin: 0 auto;
+      background-color: #f2f2f2;
+      display: none;
+    }
+
+    .dctree-message {
+      padding: 10px;
+      margin-bottom: 50px;
+      font-size: 1.5em;
+    }
+    [class^="dctree-answer"] {
+      padding: 20px;
+      text-align: center;
+      margin: 10px 20px;
+      box-shadow: 3px 3px 5px 2px #bdbdbd;
+      text-shadow: 1px 1px 2px black;
+    }
+
+    .red {
+      background-color: red;
+      color: white;
+    }
+
+    .green {
+      background-color: green;
+      color: white;
+    }
+
+    .orange {
+      background-color: orange;
+      color: white;
+    }
+  </style>
+  <body>
+    <div class="main"></div>
+    <script>
+      var data = {
+        message: "<div style='color:green;'>האם כל הטסטים בפרוד ירוקים?</div>",
+        decisions: [
+          {
+            answer: "Yes",
+            class: "green",
+            message: "מעולה. תמשיך לעבוד"
+          },
+          {
+            answer: "No",
+            class: "red",
+            message: "נא לפנות למתן  <a href='mailto:matan.yamin@sap.com'>matan.yamin@sap.com</a>",
+          }
+        ],
+      };
+
+      $(document).ready(function() {
+    $('.main').decisionTree({data: data});
+});
+    </script>
+  </body>
+</html>
